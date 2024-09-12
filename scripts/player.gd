@@ -6,6 +6,8 @@ const JUMP_FORCE = -400.0
 @onready var animation:= $animated as AnimatedSprite2D
 var is_jumping := false
 
+#signal player_has_died()
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
