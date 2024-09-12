@@ -22,6 +22,10 @@ window/size/viewport_height=320
 window/stretch/mode="viewport"
 window/stretch/scale=2.0
 
+[global_group]
+
+player=""
+
 [layer_names]
 
 2d_physics/layer_1="player"
