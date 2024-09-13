@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq2p2vfnsyo40"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_pnenu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qy5om"]
+
+[node name="Congratulations" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pnenu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -55.0
+offset_right = 84.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Missão Cumprida!
+"
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qy5om")
+
+[node name="score_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "
+"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qy5om")
+
+[node name="Restart_btn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Recomeçar"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qy5om")
+
+[node name="Quit_btn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sair"
+
+[connection signal="pressed" from="VBoxContainer/Restart_btn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit_btn" to="." method="_on_quit_btn_pressed"]

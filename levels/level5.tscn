@@ -307,7 +307,7 @@ position = Vector2(86, 130)
 
 [node name="portal" parent="." instance=ExtResource("9_wiigo")]
 position = Vector2(807, 88)
-cena_a_carregar = "res://scenes/game_over.tscn"
+cena_a_carregar = "res://scenes/congratulations.tscn"
 
 [node name="BG" type="ParallaxBackground" parent="."]
 
