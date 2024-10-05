@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://1ap3xiiou100"]
+[gd_scene load_steps=9 format=3 uid="uid://1ap3xiiou100"]
 
 [ext_resource type="Script" path="res://scripts/hud_manager.gd" id="1_u5od3"]
+[ext_resource type="FontFile" uid="uid://cpn3kcsxkx22i" path="res://assets/fonts/RevMiniPixel.ttf" id="2_isddl"]
+[ext_resource type="Texture2D" uid="uid://dgfvrh8yg3sch" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Common Pick-ups/00_Coin-Sprites.png" id="3_py50w"]
+[ext_resource type="Texture2D" uid="uid://byt5ar30rr4lk" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Common Pick-ups/01_Coin-Sprites.png" id="4_f4ijs"]
+[ext_resource type="Texture2D" uid="uid://dn4vcy65s8hmt" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Common Pick-ups/02_Coin-Sprites.png" id="5_druqe"]
+[ext_resource type="Texture2D" uid="uid://bstuh08nhmt8u" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Common Pick-ups/03_Coin-Sprites.png" id="6_7rmhx"]
+[ext_resource type="Texture2D" uid="uid://bvkbyeuww3dcr" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Mini UI/Health_Indicator_Black_Outline (8 x 8).png" id="7_qe2es"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_o5yal"]
+frames = 4
+speed_scale = 5.0
+frame_0/texture = ExtResource("3_py50w")
+frame_1/texture = ExtResource("4_f4ijs")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("5_druqe")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("6_7rmhx")
+frame_3/duration = 1.0
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -30,7 +47,7 @@ theme_override_constants/margin_bottom = 8
 
 [node name="timer_container" type="HBoxContainer" parent="control2/container"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 size_flags_vertical = 0
 
 [node name="timer_label" type="Label" parent="control2/container/timer_container"]
@@ -38,6 +55,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_isddl")
 theme_override_font_sizes/font_size = 8
 text = "TIME:"
 vertical_alignment = 1
@@ -47,6 +65,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_isddl")
 theme_override_font_sizes/font_size = 8
 text = "00:00"
 vertical_alignment = 1
@@ -61,6 +80,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_isddl")
 theme_override_font_sizes/font_size = 8
 text = "SCORE:
 "
@@ -71,8 +91,66 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_isddl")
 theme_override_font_sizes/font_size = 8
 text = "000
+"
+vertical_alignment = 1
+
+[node name="coins_container" type="HBoxContainer" parent="control2/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="coins_icon" type="TextureRect" parent="control2/container/coins_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AnimatedTexture_o5yal")
+
+[node name="coins_counter" type="Label" parent="control2/container/coins_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_isddl")
+theme_override_font_sizes/font_size = 8
+text = "000
+"
+vertical_alignment = 1
+
+[node name="life_container" type="HBoxContainer" parent="control2/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="life_icon" type="TextureRect" parent="control2/container/life_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("7_qe2es")
+stretch_mode = 1
+flip_h = true
+
+[node name="life_separator" type="Label" parent="control2/container/life_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_isddl")
+theme_override_font_sizes/font_size = 8
+text = "X
+"
+vertical_alignment = 1
+
+[node name="life_counter" type="Label" parent="control2/container/life_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_isddl")
+theme_override_font_sizes/font_size = 8
+text = "03
 "
 vertical_alignment = 1
 

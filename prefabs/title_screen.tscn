@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjb06uxnwhy16"]
+
+[ext_resource type="Texture2D" uid="uid://em1boml6tud7" path="res://assets/title.png" id="1_skcok"]
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_u5wqg"]
+[ext_resource type="FontFile" uid="uid://cpn3kcsxkx22i" path="res://assets/fonts/RevMiniPixel.ttf" id="2_d45iw"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u5wqg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="MarginContainer"]
+modulate = Color(1, 1, 1, 0.545098)
+layout_mode = 2
+texture = ExtResource("1_skcok")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="title_game" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_d45iw")
+theme_override_font_sizes/font_size = 32
+text = "Esca"
+horizontal_alignment = 1
+
+[node name="title_game2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_d45iw")
+theme_override_font_sizes/font_size = 32
+text = "PY"
+horizontal_alignment = 2
+
+[node name="game_logo" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="start_btn" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_d45iw")
+text = "INICIAR
+"
+
+[node name="quit_btn" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_d45iw")
+text = "SAIR
+"
+
+[node name="comprista" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+expand_mode = 2
+flip_h = true
+
+[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]

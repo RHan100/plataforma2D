@@ -2,6 +2,8 @@ extends Control
 
 @onready var score_counter: Label = $container/score_container/score_counter 
 @onready var timer_counter: Label = $container/timer_container/timer_counter
+@onready var coins_counter: Label = $container/coins_container/coins_counter
+@onready var life_counter: Label = $container/life_container/life_counter
 @onready var clock_timer: Timer = $clock_timer
 
 var minutes = 0
@@ -12,14 +14,18 @@ var seconds = 0
 signal time_is_up()
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	score_counter.text = str("%03d" % Globals.score)
+func _ready():
+	coins_counter.text = str("%04d" % Globals.coins)
+	score_counter.text = str("%06d" % Globals.score)
+	life_counter.text = str("%02d" % Globals.player_life)
 	timer_counter.text = str("%02d" % default_minutes) + ":" + str("%02d" % default_seconds)
 	reset_clock_timer()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	score_counter.text = str("%03d" % Globals.score)
+	coins_counter.text = str("%04d" % Globals.coins)
+	score_counter.text = str("%06d" % Globals.score)
+	life_counter.text = str("%02d" % Globals.player_life)
 	
 	if minutes == 0 and seconds == 0:
 		emit_signal("time_is_up")

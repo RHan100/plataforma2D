@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq2p2vfnsyo40"]
+[gd_scene load_steps=4 format=3 uid="uid://cq2p2vfnsyo40"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_pnenu"]
+[ext_resource type="FontFile" uid="uid://cpn3kcsxkx22i" path="res://assets/fonts/RevMiniPixel.ttf" id="2_ewu6o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qy5om"]
 
@@ -39,6 +40,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ewu6o")
 text = "Missão Cumprida!
 "
 
@@ -49,6 +51,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_qy5om")
 [node name="score_label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ewu6o")
 text = "
 "
 
@@ -58,6 +61,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_qy5om")
 
 [node name="Restart_btn" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ewu6o")
 text = "Recomeçar"
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
@@ -66,6 +70,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_qy5om")
 
 [node name="Quit_btn" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ewu6o")
 text = "Sair"
 
 [connection signal="pressed" from="VBoxContainer/Restart_btn" to="." method="_on_restart_btn_pressed"]
