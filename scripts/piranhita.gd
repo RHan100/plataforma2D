@@ -20,9 +20,9 @@ func _physics_process(delta: float) -> void:
 		wall_detector.scale.x *= -1
 		
 	if direction == 1:
-		texture.flip_h = true
-	else:
 		texture.flip_h = false
+	else:
+		texture.flip_h = true
 	velocity.x = direction * SPEED * delta
 		
 	move_and_slide()
