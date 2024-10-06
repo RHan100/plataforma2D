@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d1jpnmxdaffa3"]
+[gd_scene load_steps=24 format=3 uid="uid://d1jpnmxdaffa3"]
 
 [ext_resource type="Texture2D" uid="uid://bwf6rye88ldmx" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_o2kw6"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_u3oly"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" path="res://scripts/warning_sign.gd" id="13_7hg6e"]
 [ext_resource type="Texture2D" uid="uid://b5ackp3nfogii" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Mini UI/Speech_Emotes (16 x 16).png" id="14_vkb3x"]
 [ext_resource type="PackedScene" uid="uid://dsxf0ad33taql" path="res://prefabs/coin.tscn" id="15_72kj1"]
+[ext_resource type="PackedScene" uid="uid://b5dee5k07wbga" path="res://prefabs/checkpoint.tscn" id="16_bhgsw"]
+[ext_resource type="PackedScene" uid="uid://dhu0a81noef7c" path="res://prefabs/diamonds.tscn" id="17_i0bmx"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_fmoqx"]
 tile_data = PackedInt32Array(0, 327681, 1, 65536, 327681, 2, 131072, 327681, 3, 1, 393217, 1, 65537, 393217, 2, 131073, 393217, 3, 2, 458753, 1, 65538, 458753, 2, 131074, 458753, 3)
@@ -276,3 +278,17 @@ position = Vector2(144, 80)
 
 [node name="coin" parent="coins" instance=ExtResource("15_72kj1")]
 position = Vector2(144, 104)
+
+[node name="checkpoint" parent="." instance=ExtResource("16_bhgsw")]
+position = Vector2(504, 112)
+
+[node name="diamonds" type="Node2D" parent="."]
+
+[node name="diamond" parent="diamonds" instance=ExtResource("17_i0bmx")]
+position = Vector2(296, 104)
+
+[node name="diamond2" parent="diamonds" instance=ExtResource("17_i0bmx")]
+position = Vector2(296, 80)
+
+[node name="diamond3" parent="diamonds" instance=ExtResource("17_i0bmx")]
+position = Vector2(296, 56)

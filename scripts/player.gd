@@ -10,6 +10,7 @@ var is_jumping := false
 var is_hurted := false
 var knockback_vector := Vector2.ZERO
 var direction
+@onready var marker_2d: Marker2D = $Marker2D
 
 @onready var animation:= $animated as AnimatedSprite2D
 #@onready var remote_transform := $remote as RemoteTransform2D

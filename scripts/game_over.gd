@@ -15,6 +15,8 @@ func _process(delta: float) -> void:
 func _on_restart_btn_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/world.tscn")
 	Globals.score = 0
+	Globals.coins = 0
+	Globals.diamonds = 0
 
 
 func _on_quit_btn_pressed() -> void:

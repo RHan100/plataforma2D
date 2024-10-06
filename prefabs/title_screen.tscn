@@ -22,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="bg" type="TextureRect" parent="MarginContainer"]
-modulate = Color(1, 1, 1, 0.545098)
+modulate = Color(1, 1, 1, 0.52549)
 layout_mode = 2
 texture = ExtResource("1_skcok")
 expand_mode = 2
