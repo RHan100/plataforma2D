@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://3knqf3f5stol"]
+
+[ext_resource type="Texture2D" uid="uid://du2lxe8m6wia1" path="res://assets/DALL·E 2024-10-10 12.05.36 - A set of 16x16 pixel art icons representing collectible items in a video game. The icons include a red bottle of whisky, a smartphone, a laptop, and a.webp" id="1_i1uhu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbtvg"]
+atlas = ExtResource("1_i1uhu")
+region = Rect2(767.768, 512.045, 245.368, 511.955)
+
+[node name="pringles" type="Sprite2D"]
+texture = SubResource("AtlasTexture_nbtvg")

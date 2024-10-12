@@ -6,6 +6,7 @@ extends Control
 @onready var diamonds_counter: Label = $container/diamonds_container/diamonds_counter
 @onready var life_counter: Label = $container/life_container/life_counter
 @onready var clock_timer: Timer = $clock_timer
+@onready var pringles_counter: Label = $container/pringles_container/pringles_counter
 
 var minutes = 0
 var seconds = 0
@@ -18,6 +19,7 @@ signal time_is_up()
 func _ready():
 	coins_counter.text = str("%04d" % Globals.coins)
 	diamonds_counter.text = str("%04d" % Globals.diamonds)
+	pringles_counter.text = str("%02d" % Globals.pringles)
 	score_counter.text = str("%06d" % Globals.score)
 	life_counter.text = str("%02d" % Globals.player_life)
 	timer_counter.text = str("%02d" % default_minutes) + ":" + str("%02d" % default_seconds)
@@ -27,6 +29,7 @@ func _ready():
 func _process(delta: float) -> void:
 	coins_counter.text = str("%04d" % Globals.coins)
 	diamonds_counter.text = str("%04d" % Globals.diamonds)
+	pringles_counter.text = str("%02d" % Globals.pringles)
 	score_counter.text = str("%06d" % Globals.score)
 	life_counter.text = str("%02d" % Globals.player_life)
 	
