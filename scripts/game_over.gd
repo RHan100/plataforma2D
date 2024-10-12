@@ -17,6 +17,8 @@ func _on_restart_btn_pressed() -> void:
 	Globals.score = 0
 	Globals.coins = 0
 	Globals.diamonds = 0
+	Globals.pringles = 0
+	Globals.player_life = 3
 
 
 func _on_quit_btn_pressed() -> void:

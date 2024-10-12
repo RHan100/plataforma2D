@@ -1,6 +1,6 @@
 extends Area2D
 
-var diamonds := 1
+var pringles := 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -16,7 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 	queue_free()
 	
 	#await $collision.call_deferred("queue_free")
-	Globals.diamonds += diamonds
+	Globals.pringles += pringles
 #
 #func _on_anim_animation_finished() -> void:
 	#queue_free()

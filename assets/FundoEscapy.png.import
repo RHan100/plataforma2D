@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cby25uqnq68d2"
-path="res://.godot/imported/FundoEscapy.jpeg-1de9cec9eab00887002c6dc70cc47c5f.ctex"
+uid="uid://bf7nlr8s8e21p"
+path="res://.godot/imported/FundoEscapy.png-e432f162c337c50b561f503e1b594a65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FundoEscapy.jpeg"
-dest_files=["res://.godot/imported/FundoEscapy.jpeg-1de9cec9eab00887002c6dc70cc47c5f.ctex"]
+source_file="res://assets/FundoEscapy.png"
+dest_files=["res://.godot/imported/FundoEscapy.png-e432f162c337c50b561f503e1b594a65.ctex"]
 
 [params]
 

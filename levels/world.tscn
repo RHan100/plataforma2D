@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d1jpnmxdaffa3"]
+[gd_scene load_steps=29 format=3 uid="uid://d1jpnmxdaffa3"]
 
 [ext_resource type="Texture2D" uid="uid://bwf6rye88ldmx" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_o2kw6"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_u3oly"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c4a3br0tkrjfu" path="res://assets/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="3_lh68r"]
 [ext_resource type="Texture2D" uid="uid://dkcqe7qd8w5eq" path="res://assets/Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="5_3v6kc"]
 [ext_resource type="Texture2D" uid="uid://50afulbb80nr" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="7_u7e12"]
-[ext_resource type="Texture2D" uid="uid://cby25uqnq68d2" path="res://assets/FundoEscapy.jpeg" id="8_joplc"]
 [ext_resource type="Texture2D" uid="uid://bs4pgtnjw1sfm" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="8_yt26s"]
+[ext_resource type="Texture2D" uid="uid://bf7nlr8s8e21p" path="res://assets/FundoEscapy.png" id="9_wnyr6"]
 [ext_resource type="PackedScene" uid="uid://b3d5aqs4ef7c" path="res://prefabs/moving_platform.tscn" id="10_xcudi"]
 [ext_resource type="PackedScene" uid="uid://pju5gg1vrn2j" path="res://actors/piranhita.tscn" id="12_0sjoi"]
 [ext_resource type="PackedScene" uid="uid://dl5u8a17dsoq6" path="res://levels/portal.tscn" id="12_7vswf"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dhu0a81noef7c" path="res://prefabs/diamonds.tscn" id="17_i0bmx"]
 [ext_resource type="PackedScene" uid="uid://dnbo6ikwoxflv" path="res://prefabs/pause_menu.tscn" id="18_vbmry"]
 [ext_resource type="AudioStream" uid="uid://hrwxypeh2kev" path="res://sounds/Pájaro Campana.mp3" id="19_nl0t5"]
+[ext_resource type="PackedScene" uid="uid://da2qhc7a78f63" path="res://prefabs/pringles.tscn" id="21_nhktd"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_fmoqx"]
 tile_data = PackedInt32Array(0, 327681, 1, 65536, 327681, 2, 131072, 327681, 3, 1, 393217, 1, 65537, 393217, 2, 131073, 393217, 3, 2, 458753, 1, 65538, 458753, 2, 131074, 458753, 3)
@@ -251,7 +252,7 @@ motion_mirroring = Vector2(1142, 0)
 [node name="fundo" type="Sprite2D" parent="BG/B5"]
 modulate = Color(1, 1, 1, 0.164706)
 scale = Vector2(0.714, 0.714)
-texture = ExtResource("8_joplc")
+texture = ExtResource("9_wnyr6")
 centered = false
 offset = Vector2(0, -395)
 
@@ -344,4 +345,8 @@ position = Vector2(296, 56)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_nl0t5")
+volume_db = -21.55
 autoplay = true
+
+[node name="diamond" parent="." instance=ExtResource("21_nhktd")]
+position = Vector2(632, 108)

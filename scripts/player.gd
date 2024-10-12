@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 200.0
 const JUMP_FORCE = -400.0
 
-
+@onready var damage: AudioStreamPlayer2D = $damage
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
 var is_hurted := false
@@ -66,7 +66,7 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 		Globals.player_life -=1
 	if Globals.player_life == 0:
 		queue_free()
-		emit_signal("player_has_died")
+		emit_signal("player_has_died")  
 
 	if knockback_force != Vector2.ZERO:
 		knockback_vector = knockback_force
@@ -74,8 +74,12 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 		var knockback_tween := get_tree().create_tween()
 		knockback_tween.parallel().tween_property(self,"knockback_vector",Vector2.ZERO,duration)
 		animation.modulate = Color(1,0,0,1)
+		damage.play()
 		knockback_tween.parallel().tween_property(animation, "modulate", Color(1,1,1,1), duration)
 
 		is_hurted = true
 		await get_tree().create_timer(.3).timeout
 		is_hurted = false
+
+
+		

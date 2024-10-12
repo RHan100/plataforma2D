@@ -1,44 +1,44 @@
-[gd_scene load_steps=16 format=3 uid="uid://dhu0a81noef7c"]
+[gd_scene load_steps=16 format=3 uid="uid://da2qhc7a78f63"]
 
-[ext_resource type="Script" path="res://scripts/diamond.gd" id="1_yl5uk"]
-[ext_resource type="Texture2D" uid="uid://of8n7082wsr3" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Effects/Bright_Sparkle (16 x 16).png" id="2_fjn5i"]
-[ext_resource type="Texture2D" uid="uid://xkgthboio78v" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Mini UI/gem.png" id="3_ybvbi"]
-[ext_resource type="Texture2D" uid="uid://cytg4c34tydo6" path="res://assets/whisky_sem_fundo.png" id="4_wk4hm"]
+[ext_resource type="Script" path="res://scripts/pringles.gd" id="1_ye65q"]
+[ext_resource type="Texture2D" uid="uid://of8n7082wsr3" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Effects/Bright_Sparkle (16 x 16).png" id="2_rydlm"]
+[ext_resource type="Texture2D" uid="uid://xkgthboio78v" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Mini UI/gem.png" id="3_j7cgy"]
+[ext_resource type="Texture2D" uid="uid://bqcaqrdf6suc6" path="res://assets/pringles_new.png" id="4_ahbqw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4qwv3"]
-atlas = ExtResource("2_fjn5i")
+atlas = ExtResource("2_rydlm")
 region = Rect2(0, 0, 20, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ixx3"]
-atlas = ExtResource("2_fjn5i")
+atlas = ExtResource("2_rydlm")
 region = Rect2(20, 0, 20, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsmv5"]
-atlas = ExtResource("2_fjn5i")
+atlas = ExtResource("2_rydlm")
 region = Rect2(40, 0, 20, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w7fik"]
-atlas = ExtResource("2_fjn5i")
+atlas = ExtResource("2_rydlm")
 region = Rect2(60, 0, 20, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kqupe"]
-atlas = ExtResource("3_ybvbi")
+atlas = ExtResource("3_j7cgy")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7exp"]
-atlas = ExtResource("3_ybvbi")
+atlas = ExtResource("3_j7cgy")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40qp7"]
-atlas = ExtResource("3_ybvbi")
+atlas = ExtResource("3_j7cgy")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fnahi"]
-atlas = ExtResource("3_ybvbi")
+atlas = ExtResource("3_j7cgy")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yqlsu"]
-atlas = ExtResource("3_ybvbi")
+atlas = ExtResource("3_j7cgy")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ej62u"]
@@ -81,11 +81,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_685al"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57nn1"]
+size = Vector2(29, 69)
 
-[node name="diamond" type="Area2D"]
+[node name="pringles" type="Area2D"]
 collision_layer = 8
-script = ExtResource("1_yl5uk")
+script = ExtResource("1_ye65q")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ej62u")
@@ -93,15 +94,15 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="collision" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_685al")
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_57nn1")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -15.0
-offset_top = -15.0
+offset_top = -37.0
 offset_right = 15.0
-offset_bottom = 15.0
-texture = ExtResource("4_wk4hm")
-expand_mode = 2
+offset_bottom = 38.0
+texture = ExtResource("4_ahbqw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
