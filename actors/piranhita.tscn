@@ -187,6 +187,7 @@ _data = {
 size = Vector2(10, 2)
 
 [node name="piranhita" type="CharacterBody2D" groups=["piranhitas"]]
+scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_n88v4")
