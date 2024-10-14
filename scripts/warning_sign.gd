@@ -5,13 +5,11 @@ extends Node2D
 
 const lines: Array[String] = [
 	"Olá comprista!",
-	"Preciso que traga alguns itens",
-	"10 celulares e 5 caixas de whisky",
+	"Sua missão é comprar 5 Iphones e 5 Perfumes",
+	"Iphones custam 20 moedas, perfumes custam 7",
 	"Não se deixe enganar pelos piranhitas",
+	"Se você morrer vai perder todo o dinheiro e itens"
 ]
-
-
-
 
 func _unhandled_input(event):
 	if area_sign.get_overlapping_bodies().size() >0:
@@ -21,7 +19,7 @@ func _unhandled_input(event):
 			DialogManager.start_message(global_position, lines)
 	else:
 		texture.hide()
-		if DialogManager.dialog_box != null:
-			DialogManager.dialog_box.queue_free()
-			DialogManager.is_message_active= false
+		#if DialogManager.dialog_box != null:
+			#DialogManager.dialog_box.queue_free()
+			#DialogManager.is_message_active= false
 		

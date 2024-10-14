@@ -119,12 +119,17 @@ text = "000
 "
 vertical_alignment = 1
 
-[node name="diamonds_container" type="HBoxContainer" parent="control2/container"]
+[node name="collectables" type="HBoxContainer" parent="control2/container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="whiskys_container" type="HBoxContainer" parent="control2/container/collectables"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="diamonds_label" type="Label" parent="control2/container/diamonds_container"]
+[node name="whiskys_label" type="Label" parent="control2/container/collectables/whiskys_container"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -135,7 +140,7 @@ text = "WHISKY
 "
 vertical_alignment = 1
 
-[node name="diamonds_counter" type="Label" parent="control2/container/diamonds_container"]
+[node name="whiskys_counter" type="Label" parent="control2/container/collectables/whiskys_container"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -146,12 +151,12 @@ text = "000
 "
 vertical_alignment = 1
 
-[node name="pringles_container" type="HBoxContainer" parent="control2/container"]
+[node name="pringles_container" type="HBoxContainer" parent="control2/container/collectables"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="pringles_label" type="Label" parent="control2/container/pringles_container"]
+[node name="pringles_label" type="Label" parent="control2/container/collectables/pringles_container"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -162,7 +167,33 @@ text = "PRINGLES
 "
 vertical_alignment = 1
 
-[node name="pringles_counter" type="Label" parent="control2/container/pringles_container"]
+[node name="pringles_counter" type="Label" parent="control2/container/collectables/pringles_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_isddl")
+theme_override_font_sizes/font_size = 8
+text = "000
+"
+vertical_alignment = 1
+
+[node name="perfumes_container" type="HBoxContainer" parent="control2/container/collectables"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="perfumes_label" type="Label" parent="control2/container/collectables/perfumes_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_isddl")
+theme_override_font_sizes/font_size = 8
+text = "PERFUME
+"
+vertical_alignment = 1
+
+[node name="perfumes_counter" type="Label" parent="control2/container/collectables/perfumes_container"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsnrshnhg7kg6"]
+
+[ext_resource type="Script" path="res://scripts/porta_loja.gd" id="1_fx1pe"]
+[ext_resource type="Texture2D" uid="uid://bks34c6gjiwdq" path="res://assets/porta fechada.png" id="1_tr7c7"]
+[ext_resource type="Texture2D" uid="uid://by5pt0b7wqx16" path="res://assets/porta aberta.png" id="3_vhel8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lcwv"]
+size = Vector2(31, 59)
+
+[node name="porta_fechada" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_fx1pe")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 15.5)
+shape = SubResource("RectangleShape2D_3lcwv")
+
+[node name="PortaFechada" type="TextureRect" parent="."]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("1_tr7c7")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PortaAberta" type="TextureRect" parent="."]
+visible = false
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("3_vhel8")
+expand_mode = 2
+stretch_mode = 5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

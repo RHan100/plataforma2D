@@ -35,7 +35,7 @@ func reload_game():
 	Globals.player.player_has_died.connect(reload_game)
 	
 	Globals.coins = 0
-	Globals.diamonds = 0
+	Globals.whiskys = 0
 	Globals.score = 0
 	Globals.player_life = 3
 	

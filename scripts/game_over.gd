@@ -16,8 +16,9 @@ func _on_restart_btn_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/world.tscn")
 	Globals.score = 0
 	Globals.coins = 0
-	Globals.diamonds = 0
+	Globals.whiskys = 0
 	Globals.pringles = 0
+	Globals.perfumes = 0
 	Globals.player_life = 3
 
 

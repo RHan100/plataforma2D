@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://da2qhc7a78f63"]
+[gd_scene load_steps=16 format=3 uid="uid://csv5ve7dy5tm8"]
 
 [ext_resource type="Script" path="res://scripts/pringles.gd" id="1_ye65q"]
 [ext_resource type="Texture2D" uid="uid://of8n7082wsr3" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Effects/Bright_Sparkle (16 x 16).png" id="2_rydlm"]
