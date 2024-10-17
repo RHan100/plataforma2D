@@ -33,9 +33,24 @@ func show_text():
 	
 	dialog_box.display_text(message_lines[current_line])
 	can_advance_message = false
+	dialog_box.dismiss_dialog_box.connect(_on_dismiss_dialog_box)
 	
 func _on_all_text_displayed():
 	can_advance_message = true
+	
+func _on_dismiss_dialog_box():
+	#dialog_box.queue_free()
+	#dialog_box = null
+	#is_message_active = false
+	dialog_box.queue_free()
+	message_lines = []
+	current_line = 0
+
+	dialog_box = null
+	dialog_box_position = Vector2.ZERO
+
+	is_message_active = false
+	can_advance_message = false
 	
 func _unhandled_input(event):
 	if(event.is_action_pressed("advance_message") && is_message_active && can_advance_message):

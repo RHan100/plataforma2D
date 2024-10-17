@@ -36,8 +36,10 @@ func reload_game():
 	
 	Globals.coins = 0
 	Globals.whiskys = 0
+	Globals.pringles = 0
 	Globals.score = 0
 	Globals.player_life = 3
+	
 	
 	Globals.respawn_player()
 	#get_tree().reload_current_scene()

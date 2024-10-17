@@ -8,6 +8,8 @@ extends Control
 @onready var clock_timer: Timer = $clock_timer
 @onready var pringles_counter: Label = $container/collectables/pringles_container/pringles_counter
 @onready var perfumes_counter: Label = $container/collectables/perfumes_container/perfumes_counter
+@onready var iphones_label: Label = $container/collectables/iphones_container/iphones_label
+@onready var iphones_counter: Label = $container/collectables/iphones_container/iphones_counter
 
 var minutes = 0
 var seconds = 0
@@ -18,22 +20,24 @@ signal time_is_up()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	coins_counter.text = str("%04d" % Globals.coins)
-	whiskys_counter.text = str("%04d" % Globals.whiskys)
+	coins_counter.text = str("%03d" % Globals.coins)
+	whiskys_counter.text = str("%02d" % Globals.whiskys)
 	pringles_counter.text = str("%02d" % Globals.pringles)
 	perfumes_counter.text = str("%02d" % Globals.perfumes)
-	score_counter.text = str("%06d" % Globals.score)
+	iphones_counter.text = str("%02d" % Globals.iphones)
+	score_counter.text = str("%05d" % Globals.score)
 	life_counter.text = str("%02d" % Globals.player_life)
 	timer_counter.text = str("%02d" % default_minutes) + ":" + str("%02d" % default_seconds)
 	reset_clock_timer()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	coins_counter.text = str("%04d" % Globals.coins)
-	whiskys_counter.text = str("%04d" % Globals.whiskys)
+	coins_counter.text = str("%03d" % Globals.coins)
+	whiskys_counter.text = str("%02d" % Globals.whiskys)
 	pringles_counter.text = str("%02d" % Globals.pringles)
 	perfumes_counter.text = str("%02d" % Globals.perfumes)
-	score_counter.text = str("%06d" % Globals.score)
+	iphones_counter.text = str("%02d" % Globals.iphones)
+	score_counter.text = str("%05d" % Globals.score)
 	life_counter.text = str("%02d" % Globals.player_life)
 	
 	if minutes == 0 and seconds == 0:

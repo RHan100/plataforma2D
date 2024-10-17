@@ -1,8 +1,7 @@
 extends Area2D
 
-var whisky := 1
-@export var cost := 3
-@export var score_worth := 70
+var iphone := 1
+@export var cost := 7
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,9 +17,8 @@ func _on_body_entered(body: Node2D) -> void:
 	#$anim.play("collect")
 	if (Globals.coins >= cost):
 		Globals.coins -= cost
-		Globals.score += score_worth
-		Globals.whiskys += whisky
 		queue_free()
+		Globals.iphones += iphone
 	
 	
 	#await $collision.call_deferred("queue_free")

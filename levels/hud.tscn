@@ -29,6 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u5od3")
+default_minutes = 3
 
 [node name="clock_timer" type="Timer" parent="control2"]
 autostart = true
@@ -189,11 +190,37 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("2_isddl")
 theme_override_font_sizes/font_size = 8
-text = "PERFUME
+text = "PERFUMES
 "
 vertical_alignment = 1
 
 [node name="perfumes_counter" type="Label" parent="control2/container/collectables/perfumes_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_isddl")
+theme_override_font_sizes/font_size = 8
+text = "000
+"
+vertical_alignment = 1
+
+[node name="iphones_container" type="HBoxContainer" parent="control2/container/collectables"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="iphones_label" type="Label" parent="control2/container/collectables/iphones_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_isddl")
+theme_override_font_sizes/font_size = 8
+text = "IPHONES
+"
+vertical_alignment = 1
+
+[node name="iphones_counter" type="Label" parent="control2/container/collectables/iphones_container"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://pju5gg1vrn2j"]
+[gd_scene load_steps=15 format=3 uid="uid://pju5gg1vrn2j"]
 
 [ext_resource type="Texture2D" uid="uid://q0ro3h5xlnd7" path="res://assets/Sprite Pack 2/4 - Robo Pumpkin/Walking (16 x 16).png" id="1_fgibl"]
 [ext_resource type="Script" path="res://scripts/piranhita.gd" id="1_n88v4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://86ojke0q2hm7" path="res://assets/Sprite Pack 2/1 - Onion Lad/Hurt (16 x 16).png" id="4_d83bf"]
 [ext_resource type="Texture2D" uid="uid://d4hjqt6pxoqi0" path="res://assets/Sprite Pack 2/1 - Onion Lad/Idle (16 x 16).png" id="5_hg73e"]
 [ext_resource type="PackedScene" uid="uid://csqp5qupaoxax" path="res://prefabs/hitbox.tscn" id="5_q48g8"]
+[ext_resource type="AudioStream" uid="uid://c2crgq77bwpvr" path="res://sounds/jump_sfx.wav" id="7_hxuwx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jcr7"]
 radius = 4.0
@@ -220,5 +221,8 @@ position = Vector2(0, -6)
 [node name="collision2" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_6ipcb")
+
+[node name="died" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_hxuwx")
 
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
