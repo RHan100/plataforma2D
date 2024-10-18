@@ -3,8 +3,10 @@ extends Node
 var coins := 0
 var score := 0
 var player_life := 3
-var diamonds := 0
+var whiskys := 0
 var pringles := 0
+var perfumes := 0
+var iphones := 0
 
 var initial_player_position: Vector2
 

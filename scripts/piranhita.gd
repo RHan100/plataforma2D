@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 700.0
 const JUMP_VELOCITY = -400.0
+@onready var died: AudioStreamPlayer2D = $died
 
 @onready var texture := $texture as Sprite2D
 @onready var wall_detector := $wall_detector as RayCast2D
@@ -30,5 +31,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "hurt":
-		Globals.score +=100
+		#died.play()
+		Globals.score +=80
+		Globals.coins +=1
 		queue_free()

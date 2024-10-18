@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://da2qhc7a78f63"]
+[gd_scene load_steps=17 format=3 uid="uid://csv5ve7dy5tm8"]
 
 [ext_resource type="Script" path="res://scripts/pringles.gd" id="1_ye65q"]
 [ext_resource type="Texture2D" uid="uid://of8n7082wsr3" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Effects/Bright_Sparkle (16 x 16).png" id="2_rydlm"]
 [ext_resource type="Texture2D" uid="uid://xkgthboio78v" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Mini UI/gem.png" id="3_j7cgy"]
 [ext_resource type="Texture2D" uid="uid://bqcaqrdf6suc6" path="res://assets/pringles_new.png" id="4_ahbqw"]
+[ext_resource type="AudioStream" uid="uid://dhbbx0dmj1mei" path="res://sounds/cash_2.mp3" id="5_kisov"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4qwv3"]
 atlas = ExtResource("2_rydlm")
@@ -104,5 +105,9 @@ offset_right = 15.0
 offset_bottom = 38.0
 texture = ExtResource("4_ahbqw")
 
+[node name="collect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_kisov")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
+[connection signal="finished" from="collect" to="." method="_on_collect_finished"]

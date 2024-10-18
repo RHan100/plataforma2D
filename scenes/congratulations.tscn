@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq2p2vfnsyo40"]
+[gd_scene load_steps=6 format=3 uid="uid://cq2p2vfnsyo40"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_pnenu"]
+[ext_resource type="Texture2D" uid="uid://cpxac3k8xnqvc" path="res://assets/game_beat.png" id="2_3d8n5"]
 [ext_resource type="FontFile" uid="uid://cpn3kcsxkx22i" path="res://assets/fonts/RevMiniPixel.ttf" id="2_ewu6o"]
+[ext_resource type="Texture2D" uid="uid://74tseb4yunje" path="res://assets/congratulations.png" id="3_4bfpe"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qy5om"]
 
@@ -14,14 +16,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pnenu")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.54902)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_3d8n5")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -37,12 +42,9 @@ offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="GameOver_title" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_ewu6o")
-text = "Missão Cumprida!
-"
+texture = ExtResource("3_4bfpe")
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2

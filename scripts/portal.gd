@@ -13,6 +13,9 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		Globals.score += 10
-		print(Globals.score)
-		get_tree().change_scene_to_file(cena_a_carregar)
+		if (Globals.iphones >= 5 && Globals.perfumes >=5):
+			Globals.score += 10
+			print(Globals.score)
+			get_tree().change_scene_to_file(cena_a_carregar)
+		else:
+			get_tree().change_scene_to_file("res://scenes/game_over.tscn")

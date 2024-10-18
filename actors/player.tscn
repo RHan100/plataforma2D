@@ -80,8 +80,11 @@ animations = [{
 size = Vector2(16, 11)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
+scale = Vector2(2, 2)
 collision_mask = 22
 script = ExtResource("1_5a734")
+jump_height = 200
+max_time_to_peak = 0.6
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
@@ -89,8 +92,9 @@ shape = SubResource("RectangleShape2D_p2ph1")
 
 [node name="camera" type="Camera2D" parent="."]
 limit_left = 0
-limit_right = 3000
-limit_bottom = 320
+limit_top = -280
+limit_right = 5000
+limit_bottom = 760
 limit_smoothed = true
 position_smoothing_enabled = true
 editor_draw_limits = true

@@ -21,11 +21,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
 [node name="bg" type="TextureRect" parent="MarginContainer"]
-modulate = Color(1, 1, 1, 0.52549)
+modulate = Color(1, 1, 1, 0.588235)
 layout_mode = 2
 texture = ExtResource("1_skcok")
 expand_mode = 2
+stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -42,7 +47,8 @@ size_flags_horizontal = 6
 
 [node name="title_game" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 1, 1)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_d45iw")
 theme_override_font_sizes/font_size = 32
@@ -51,7 +57,8 @@ horizontal_alignment = 1
 
 [node name="title_game2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 1, 1)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_d45iw")
@@ -64,6 +71,7 @@ layout_mode = 2
 
 [node name="start_btn" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_d45iw")
 text = "INICIAR
@@ -71,10 +79,36 @@ text = "INICIAR
 
 [node name="quit_btn" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_d45iw")
 text = "SAIR
 "
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0.901961, 0.901961, 0.901961, 1)
+
+[node name="info" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(275, 115)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_d45iw")
+theme_override_font_sizes/font_size = 16
+text = "INSTRUÇÕES:
+Use as setas para mover
+Pressione ' espaço' para pular
+' i ' para interagir
+' o ' para avançar o texto"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="comprista" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
