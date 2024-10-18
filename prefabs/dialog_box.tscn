@@ -34,4 +34,8 @@ vertical_alignment = 1
 
 [node name="letter_time_display" type="Timer" parent="."]
 
+[node name="dismiss_dialog" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="letter_time_display" to="." method="_on_letter_time_display_timeout"]
+[connection signal="timeout" from="dismiss_dialog" to="." method="_on_dismiss_dialog_timeout"]

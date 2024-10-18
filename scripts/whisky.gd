@@ -1,22 +1,34 @@
 extends Area2D
 
-var diamonds := 1
+var whisky := 1
+@export var cost := 3
+@export var score_worth := 70
+@onready var collect: AudioStreamPlayer2D = $collect
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#func _process(delta: float) -> void:
+	#pass
 
 
 func _on_body_entered(body: Node2D) -> void:
 	#$anim.play("collect")
-	queue_free()
+	if (Globals.coins >= cost):
+		Globals.coins -= cost
+		Globals.score += score_worth
+		Globals.whiskys += whisky
+		collect.play()
+	
 	
 	#await $collision.call_deferred("queue_free")
-	Globals.diamonds += diamonds
 #
 #func _on_anim_animation_finished() -> void:
 	#queue_free()
+
+
+func _on_collect_finished() -> void:
+	queue_free()
