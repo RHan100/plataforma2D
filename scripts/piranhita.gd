@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "hurt":
-		died.play()
+		#died.play()
 		Globals.score +=80
 		Globals.coins +=1
 		queue_free()

@@ -29,7 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u5od3")
-default_minutes = 3
+default_minutes = 5
 
 [node name="clock_timer" type="Timer" parent="control2"]
 autostart = true

@@ -4,7 +4,9 @@ extends MarginContainer
 @onready var text_label: Label = $label_margin/text_label
 @onready var dismiss_dialog: Timer = $dismiss_dialog
 
-@export var dismiss_time := 1
+@export var dismiss_time := 1.5
+
+var dialog_dismissed = false
 
 const MAX_WIDTH = 256
 
@@ -17,6 +19,9 @@ var punctuation_display_timer := 0.2
 
 signal text_display_finished()
 signal dismiss_dialog_box()
+
+func _ready() -> void:
+	dismiss_dialog.timeout.connect(_on_dismiss_dialog_timeout)
 
 func display_text(text_to_display: String):
 	text = text_to_display
@@ -42,8 +47,10 @@ func display_text(text_to_display: String):
 func display_letter():
 	
 	if letter_index >= text.length():
-		emit_signal("text_display_finished")
-		dismiss_dialog.start(dismiss_time)
+		if not dialog_dismissed:
+			dialog_dismissed = true
+			dismiss_dialog.start(dismiss_time)  # Inicia o timer
+			emit_signal("text_display_finished")
 		return
 	
 	text_label.text += text[letter_index]
@@ -59,7 +66,6 @@ func display_letter():
 		
 func _on_letter_time_display_timeout() -> void:
 	display_letter()
-
 
 func _on_dismiss_dialog_timeout() -> void:
 	emit_signal("dismiss_dialog_box")
